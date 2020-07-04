@@ -1,0 +1,100 @@
+2020-06-26 14:30:31 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'laundry.user' doesn't exist in /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Schema/Collection.php on line 132
+Stack Trace:
+#0 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(98): Cake\Database\Schema\Collection->_reflect('Column', 'user', Array, Object(Cake\Database\Schema\TableSchema))
+#1 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(61): Cake\Database\Schema\Collection->describe('user', Array)
+#2 /var/www/html/laundry/vendor/cakephp/cakephp/src/ORM/Table.php(566): Cake\Database\Schema\CachedCollection->describe('user')
+#3 /var/www/html/laundry/vendor/cakephp/cakephp/src/ORM/Table.php(691): Cake\ORM\Table->getSchema()
+#4 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(221): Cake\ORM\Table->getPrimaryKey()
+#5 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(131): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(114): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'user', 'User')
+#7 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(101): Bake\Shell\Task\ModelTask->bake('User')
+#8 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/BakeShell.php(282): Bake\Shell\Task\ModelTask->main('User')
+#9 /var/www/html/laundry/vendor/cakephp/cakephp/src/Collection/CollectionTrait.php(64): Bake\Shell\BakeShell->Bake\Shell\{closure}('User', 0)
+#10 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/BakeShell.php(283): Cake\Collection\Collection->each(Object(Closure))
+#11 /var/www/html/laundry/vendor/cakephp/cakephp/src/Console/Shell.php(517): Bake\Shell\BakeShell->all('user')
+#12 /var/www/html/laundry/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(229): Cake\Console\Shell->runCommand(Array, true, Array)
+#13 /var/www/html/laundry/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(181): Cake\Console\ShellDispatcher->_dispatch(Array)
+#14 /var/www/html/laundry/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(127): Cake\Console\ShellDispatcher->dispatch(Array)
+#15 /var/www/html/laundry/bin/cake.php(33): Cake\Console\ShellDispatcher::run(Array)
+#16 {main}
+
+
+Caused by: [PDOException] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'laundry.user' doesn't exist in /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php on line 37
+Stack Trace:
+#0 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(37): PDOStatement->execute(NULL)
+#1 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Connection.php(357): Cake\Database\Statement\MysqlStatement->execute()
+#2 /var/www/html/laundry/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#3 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Connection.php(360): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#4 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Connection.php(309): Cake\Database\Connection->query('SHOW FULL COLUM...')
+#5 /var/www/html/laundry/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#6 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Connection.php(313): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#7 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(130): Cake\Database\Connection->execute('SHOW FULL COLUM...', Array)
+#8 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(98): Cake\Database\Schema\Collection->_reflect('Column', 'user', Array, Object(Cake\Database\Schema\TableSchema))
+#9 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(61): Cake\Database\Schema\Collection->describe('user', Array)
+#10 /var/www/html/laundry/vendor/cakephp/cakephp/src/ORM/Table.php(566): Cake\Database\Schema\CachedCollection->describe('user')
+#11 /var/www/html/laundry/vendor/cakephp/cakephp/src/ORM/Table.php(691): Cake\ORM\Table->getSchema()
+#12 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(221): Cake\ORM\Table->getPrimaryKey()
+#13 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(131): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#14 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(114): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'user', 'User')
+#15 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(101): Bake\Shell\Task\ModelTask->bake('User')
+#16 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/BakeShell.php(282): Bake\Shell\Task\ModelTask->main('User')
+#17 /var/www/html/laundry/vendor/cakephp/cakephp/src/Collection/CollectionTrait.php(64): Bake\Shell\BakeShell->Bake\Shell\{closure}('User', 0)
+#18 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/BakeShell.php(283): Cake\Collection\Collection->each(Object(Closure))
+#19 /var/www/html/laundry/vendor/cakephp/cakephp/src/Console/Shell.php(517): Bake\Shell\BakeShell->all('user')
+#20 /var/www/html/laundry/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(229): Cake\Console\Shell->runCommand(Array, true, Array)
+#21 /var/www/html/laundry/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(181): Cake\Console\ShellDispatcher->_dispatch(Array)
+#22 /var/www/html/laundry/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(127): Cake\Console\ShellDispatcher->dispatch(Array)
+#23 /var/www/html/laundry/bin/cake.php(33): Cake\Console\ShellDispatcher::run(Array)
+#24 {main}
+
+
+2020-06-26 15:31:10 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'laundry.prices' doesn't exist in /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Schema/Collection.php on line 132
+Stack Trace:
+#0 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(98): Cake\Database\Schema\Collection->_reflect('Column', 'prices', Array, Object(Cake\Database\Schema\TableSchema))
+#1 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(61): Cake\Database\Schema\Collection->describe('prices', Array)
+#2 /var/www/html/laundry/vendor/cakephp/cakephp/src/ORM/Table.php(566): Cake\Database\Schema\CachedCollection->describe('prices')
+#3 /var/www/html/laundry/vendor/cakephp/cakephp/src/ORM/Table.php(691): Cake\ORM\Table->getSchema()
+#4 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(221): Cake\ORM\Table->getPrimaryKey()
+#5 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(131): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(114): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'prices', 'Prices')
+#7 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(101): Bake\Shell\Task\ModelTask->bake('Prices')
+#8 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/BakeShell.php(282): Bake\Shell\Task\ModelTask->main('Prices')
+#9 /var/www/html/laundry/vendor/cakephp/cakephp/src/Collection/CollectionTrait.php(64): Bake\Shell\BakeShell->Bake\Shell\{closure}('Prices', 0)
+#10 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/BakeShell.php(283): Cake\Collection\Collection->each(Object(Closure))
+#11 /var/www/html/laundry/vendor/cakephp/cakephp/src/Console/Shell.php(517): Bake\Shell\BakeShell->all('prices')
+#12 /var/www/html/laundry/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(229): Cake\Console\Shell->runCommand(Array, true, Array)
+#13 /var/www/html/laundry/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(181): Cake\Console\ShellDispatcher->_dispatch(Array)
+#14 /var/www/html/laundry/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(127): Cake\Console\ShellDispatcher->dispatch(Array)
+#15 /var/www/html/laundry/bin/cake.php(33): Cake\Console\ShellDispatcher::run(Array)
+#16 {main}
+
+
+Caused by: [PDOException] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'laundry.prices' doesn't exist in /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php on line 37
+Stack Trace:
+#0 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(37): PDOStatement->execute(NULL)
+#1 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Connection.php(357): Cake\Database\Statement\MysqlStatement->execute()
+#2 /var/www/html/laundry/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#3 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Connection.php(360): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#4 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Connection.php(309): Cake\Database\Connection->query('SHOW FULL COLUM...')
+#5 /var/www/html/laundry/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#6 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Connection.php(313): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#7 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(130): Cake\Database\Connection->execute('SHOW FULL COLUM...', Array)
+#8 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(98): Cake\Database\Schema\Collection->_reflect('Column', 'prices', Array, Object(Cake\Database\Schema\TableSchema))
+#9 /var/www/html/laundry/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(61): Cake\Database\Schema\Collection->describe('prices', Array)
+#10 /var/www/html/laundry/vendor/cakephp/cakephp/src/ORM/Table.php(566): Cake\Database\Schema\CachedCollection->describe('prices')
+#11 /var/www/html/laundry/vendor/cakephp/cakephp/src/ORM/Table.php(691): Cake\ORM\Table->getSchema()
+#12 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(221): Cake\ORM\Table->getPrimaryKey()
+#13 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(131): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#14 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(114): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'prices', 'Prices')
+#15 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(101): Bake\Shell\Task\ModelTask->bake('Prices')
+#16 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/BakeShell.php(282): Bake\Shell\Task\ModelTask->main('Prices')
+#17 /var/www/html/laundry/vendor/cakephp/cakephp/src/Collection/CollectionTrait.php(64): Bake\Shell\BakeShell->Bake\Shell\{closure}('Prices', 0)
+#18 /var/www/html/laundry/vendor/cakephp/bake/src/Shell/BakeShell.php(283): Cake\Collection\Collection->each(Object(Closure))
+#19 /var/www/html/laundry/vendor/cakephp/cakephp/src/Console/Shell.php(517): Bake\Shell\BakeShell->all('prices')
+#20 /var/www/html/laundry/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(229): Cake\Console\Shell->runCommand(Array, true, Array)
+#21 /var/www/html/laundry/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(181): Cake\Console\ShellDispatcher->_dispatch(Array)
+#22 /var/www/html/laundry/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(127): Cake\Console\ShellDispatcher->dispatch(Array)
+#23 /var/www/html/laundry/bin/cake.php(33): Cake\Console\ShellDispatcher::run(Array)
+#24 {main}
+
+
